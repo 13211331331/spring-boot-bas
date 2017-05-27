@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.billionsfinance.bas.mapper.BasTestMapper">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO BAS_TEST (ID, NAME, REMARK,CREATE_DATE) VALUES (
+        #{id}, #{name}, #{remark},sysdate
+        )
+    </insert>
+    <select id="getById" resultType="cn.billionsfinance.bas.entity.BasTest">
+        SELECT * FROM BAS_TEST WHERE id = #{id}
+    </select>
+
+    <delete id="delete">
+        DELETE FROM BAS_TEST WHERE id = #{id}
+    </delete>
+
+</mapper>
